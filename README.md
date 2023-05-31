@@ -8,10 +8,13 @@ Networks used for the experiment are available [here](https://drive.google.com/d
 
 ## Publications
 
-[Incremental Verification of Neural Networks](https://arxiv.org/abs/2304.01874)\
+[IVAN: Incremental Verification of Neural Networks](https://arxiv.org/abs/2304.01874)\
 Shubham Ugare, Debangshu Banerjee, Sasa Misailovic, and Gagandeep Singh\
 <strong> PLDI 2023 </strong>
 
+[IRS: Incremental Randomized Smoothing Certification]()\
+Shubham Ugare, Tarun Suresh, Debangshu Banerjee, Gagandeep Singh, and Sasa Misailovic\
+<strong> Arxiv 2023 </strong>
 
 ## Installation
 
