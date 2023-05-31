@@ -1,0 +1,50 @@
+fc1,img0_0.09500.txt,verified
+fc1,img1_0.02000.txt,verified
+fc1,img2_0.11500.txt,verified
+fc1,img3_0.09000.txt,verified
+fc1,img4_0.14000.txt,not verified
+fc2,img0_0.08500.txt,verified
+fc2,img1_0.08000.txt,verified
+fc2,img2_0.17000.txt,not verified
+fc2,img3_0.01000.txt,verified
+fc2,img4_0.01000.txt,verified
+fc3,img0_0.04000.txt,verified
+fc3,img1_0.04500.txt,verified
+fc3,img2_0.04500.txt,verified
+fc3,img3_0.05000.txt,not verified
+fc3,img4_0.02000.txt,verified
+fc4,img0_0.17000.txt,verified
+fc4,img1_0.22000.txt,not verified
+fc4,img2_0.13000.txt,verified
+fc4,img3_0.03500.txt,verified
+fc4,img4_0.16000.txt,not verified
+fc5,img0_0.01000.txt,verified
+fc5,img1_0.12000.txt,verified
+fc5,img2_0.01000.txt,verified
+fc5,img3_0.10000.txt,verified
+fc5,img4_0.14500.txt,verified
+fc6,img0_0.01000.txt,verified
+fc6,img1_0.01000.txt,verified
+fc6,img2_0.07000.txt,not verified
+fc6,img3_0.08500.txt,verified
+fc6,img4_0.05000.txt,verified
+fc7,img0_0.50000.txt,not verified
+fc7,img1_0.14500.txt,verified
+fc7,img2_0.17000.txt,verified
+fc7,img3_0.02000.txt,verified
+fc7,img4_0.15500.txt,verified
+conv1,img0_0.13500.txt,verified
+conv1,img1_0.13000.txt,verified
+conv1,img2_0.31000.txt,not verified
+conv1,img3_0.04000.txt,verified
+conv1,img4_0.03000.txt,verified
+conv2,img0_0.13000.txt,verified
+conv2,img1_0.01000.txt,verified
+conv2,img2_0.16500.txt,verified
+conv2,img3_0.27000.txt,not verified
+conv2,img4_0.16000.txt,verified
+conv3,img0_0.01000.txt,verified
+conv3,img1_0.18500.txt,verified
+conv3,img2_0.23500.txt,verified
+conv3,img3_0.24000.txt,verified
+conv3,img4_0.24000.txt,verified
