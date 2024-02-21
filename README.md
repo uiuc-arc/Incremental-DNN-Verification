@@ -14,7 +14,7 @@ Shubham Ugare, Debangshu Banerjee, Sasa Misailovic, and Gagandeep Singh\
 
 [IRS: Incremental Randomized Smoothing Certification]()\
 Shubham Ugare, Tarun Suresh, Debangshu Banerjee, Gagandeep Singh, and Sasa Misailovic\
-<strong> Arxiv 2023 </strong>
+<strong> ICLR 2024 </strong>
 
 ## Installation
 
