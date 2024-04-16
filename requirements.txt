@@ -70,7 +70,7 @@ sympy
 tabulate
 tenacity
 threadpoolctl
-torch==1.12.1
+torch==1.13.0
 torchaudio
 torchvision
 tqdm
