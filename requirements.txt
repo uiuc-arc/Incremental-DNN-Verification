@@ -35,7 +35,7 @@ networkx
 neural-compressor
 ninja
 numexpr
-numpy
+numpy==1.26
 onnx
 onnxruntime
 opencv-python
