@@ -14,7 +14,6 @@ Deprecated
 filelock
 flatbuffers
 fonttools
-gmpy2
 gurobipy
 humanfriendly
 idna
