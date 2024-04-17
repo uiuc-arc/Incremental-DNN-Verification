@@ -37,7 +37,7 @@ class irs_plot(TestCase):
             for sample in samples:
                 print("Certifying Sample Size ", sample)
                 args = IncrementalRSArgs(net=net, dataset=dataset, count=count, alpha1=0.001, alpha_chi=0.001, batch=100, sigma=sigma, N=N, N2=sample, N_chi=sample, approx=approximation)
-                res = IncrementalRS(args).certify_perturbed(rs_cache, perturbed_base_classifier, original_radii, original_pA, original_time, gamma=gamma)
+                res = IncrementalRS(args).certify_perturbed_irs_and_base(rs_cache, perturbed_base_classifier, original_radii, original_pA, original_time, gamma=gamma)
                 res_map[sample] = res
             
             plot_mean_radius(args, res_map)
@@ -125,7 +125,7 @@ class irs_plot(TestCase):
             for sample in samples:
                 print("Certifying Sample Size ", sample)
                 args = IncrementalRSArgs(net=net, dataset=dataset, count=count, alpha1=0.001, alpha_chi=0.001, batch=100, sigma=sigma, N=N, N2=sample, N_chi=sample, approx=approximation)
-                res = IncrementalRS(args).certify_perturbed(rs_cache, perturbed_base_classifier, original_radii, original_pA, original_time, gamma=gamma)
+                res = IncrementalRS(args).certify_perturbed_irs_and_base(rs_cache, perturbed_base_classifier, original_radii, original_pA, original_time, gamma=gamma)
                 res_map[sample] = res
             res_maps.append(res_map)
         
@@ -172,8 +172,8 @@ class hyperparam(TestCase):
             for sample in samples:
                 print("Certifying Sample Size ", sample)
                 args = IncrementalRSArgs(net=net, dataset=dataset, count=count, alpha1=0.001, alpha_chi=0.001, batch=100, sigma=sigma, N=N, N2=sample, N_chi=sample, approx=approximation)
-                res = IncrementalRS(args).certify_perturbed(rs_cache, perturbed_base_classifier, original_radii, original_pA, original_time, gamma)
-                original, irs, base = res.get_mean_radius()
+                res = IncrementalRS(args).certify_perturbed_irs_and_base(rs_cache, perturbed_base_classifier, original_radii, original_pA, original_time, gamma)
+                original, irs, base = res.get_mean_radius_all()
                 irs_mean_radius[gamma] += irs
                 res_map[sample] = res
             irs_mean_radius[gamma] /= len(samples)

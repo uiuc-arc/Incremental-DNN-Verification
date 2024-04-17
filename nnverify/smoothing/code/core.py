@@ -129,7 +129,7 @@ class Smooth(object):
 
     def compute_radius_with_chi(self, x, n_chi, batch_size, alpha_chi, label, seeds, predictions, original_pA):
 
-        #estimate chi with n_chi samples
+        # Estimate chi with n_chi samples
         chi, counts_selection = self._estimate_chi(x, n_chi, batch_size, alpha_chi, seeds, predictions)
         print('chi: ', chi)
         # use these samples to take a guess at the top class
@@ -236,7 +236,6 @@ class Smooth(object):
 
             return counts, seeds, preds
 
-    
     
     def _estimate_chi(self, x: torch.tensor, num: int, batch_size: int, alpha_chi: float, seeds, predictions):
         with torch.no_grad():

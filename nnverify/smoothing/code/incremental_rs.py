@@ -116,8 +116,6 @@ class IncrementalRSResults():
         self.original_radii = np.array(original_radii)
         self.original_pA = np.array(original_pA)
         self.original_time = np.array(original_time)
-
-    
     
     def add_irs(self, irs_radii, irs_chi, irs_pA, irs_time, gamma):
         self.irs_radii = np.array(irs_radii)
@@ -131,16 +129,16 @@ class IncrementalRSResults():
         self.base_pA = np.array(base_pA)
         self.base_time = np.array(base_time)
     
-    def get_mean_radius(self):
+    def get_mean_radius_all(self):
         return np.mean(self.original_radii), np.mean(self.irs_radii), np.mean(self.base_radii)
     
-    def get_mean_time_elapsed(self):
+    def get_mean_time_elapsed_all(self):
         return np.mean(self.original_time), np.mean(self.irs_time), np.mean(self.base_time)
     
-    def get_tot_cert_time(self):
+    def get_tot_cert_time_all(self):
         return np.sum(self.original_time), np.sum(self.irs_time), np.sum(self.base_time)
 
-    def get_cert_accuracy(self, radius: float):
+    def get_cert_accuracy_all(self, radius: float):
         return np.sum(self.original_radii>= radius)/len(self.original_radii), np.sum(self.irs_radii >= radius)/len(self.irs_radii), np.sum(self.base_radii >= radius)/len(self.base_radii)
     
     
@@ -203,7 +201,7 @@ class IncrementalRS():
         return perturbed_base_classifier
 
     
-    def certify_perturbed(self, rs_cache, perturbed_base_classifier, original_radii, original_pA, original_time, gamma = 0.99):
+    def certify_perturbed_irs_and_base(self, rs_cache, perturbed_base_classifier, original_radii, original_pA, original_time, gamma = 0.99):
         self.results.add_original(original_radii, original_pA, original_time)
 
         # #run certification on perturbed network using theorem 2 and cache_map
@@ -218,6 +216,19 @@ class IncrementalRS():
         perturbed_network2 = Smooth(perturbed_base_classifier, self.dataset, get_num_classes(self.args.dataset), self.args.sigma, device=device, dataset_name = self.args.dataset)
         perturbed_network2.certify(self.args.count, self.args.N2, self.args.alpha1 + self.args.alpha_chi, self.args.batch)
         self.results.add_base(perturbed_network2.rs_cache.radii, perturbed_network2.rs_cache.pA_arr, perturbed_network2.rs_cache.time_arr)
+
+        self.results.save()
+        return self.results 
+    
+    def certify_perturbed_irs(self, rs_cache, perturbed_base_classifier, original_radii, original_pA, original_time, gamma = 0.99):
+        self.results.add_original(original_radii, original_pA, original_time)
+
+        # #run certification on perturbed network using theorem 2 and cache_map
+        print("Run Certification of Perturbed Network with Cache Map")
+        device = get_device(self.args.approximation)
+        perturbed_network = Smooth(perturbed_base_classifier, self.dataset, get_num_classes(self.args.dataset), self.args.sigma, device=device, dataset_name = self.args.dataset)
+        perturbed_network.certify_with_cache(self.args.count, self.args.N2, self.args.N_chi, self.args.alpha1, self.args.alpha_chi, self.args.batch, rs_cache, gamma) 
+        self.results.add_irs(perturbed_network.rs_cache.radii, perturbed_network.rs_cache.chi_arr, perturbed_network.rs_cache.pA_arr, perturbed_network.rs_cache.time_arr, gamma)
 
         self.results.save()
         return self.results 

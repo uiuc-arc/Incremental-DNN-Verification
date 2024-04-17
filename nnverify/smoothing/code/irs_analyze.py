@@ -428,14 +428,6 @@ def compute_smoothed_accuracy(net, approximation, dataset, alpha1, batch, sigma,
     return correct/len(dataset)
 
 
-
-
-    
-
-
-
-
-
 def plot_stored(net, approximation, dataset, count, alpha1, alpha_chi, batch, sigma, N):
     res_map = get_res_map(net, approximation, dataset, count, alpha1, alpha_chi, batch, sigma, N)
     args = IncrementalRSArgs(net=net, dataset=dataset, count=count, alpha1=alpha1, alpha_chi= alpha_chi, batch=batch, sigma=sigma, N=N, N2=None, N_chi=None, approx=approximation)
