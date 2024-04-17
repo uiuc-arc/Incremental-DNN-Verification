@@ -25,9 +25,6 @@ kiwisolver
 lit
 MarkupSafe
 matplotlib
-mkl-fft
-mkl-random
-mkl-service
 mpmath
 munkres
 networkx
