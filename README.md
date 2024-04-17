@@ -18,6 +18,11 @@ Shubham Ugare, Tarun Suresh, Debangshu Banerjee, Gagandeep Singh, and Sasa Misai
 
 ## Installation
 
+You can install all the dependencies for the nn_verify library with 
+```
+pip install git+https://github.com/uiuc-arc/Incremental-DNN-Verification.git
+```
+
 <details><summary> Instructions for IVAN </summary>
 <p>
 
