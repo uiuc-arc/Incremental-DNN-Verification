@@ -69,7 +69,6 @@ torch
 torchaudio
 torchvision
 tqdm
-triton
 typing_extensions
 tzdata
 urllib3
