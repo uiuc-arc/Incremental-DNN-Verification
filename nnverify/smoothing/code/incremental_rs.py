@@ -229,7 +229,5 @@ class IncrementalRS():
         perturbed_network = Smooth(perturbed_base_classifier, self.dataset, get_num_classes(self.args.dataset), self.args.sigma, device=device, dataset_name = self.args.dataset)
         perturbed_network.certify_with_cache(self.args.count, self.args.N2, self.args.N_chi, self.args.alpha1, self.args.alpha_chi, self.args.batch, rs_cache, gamma) 
         self.results.add_irs(perturbed_network.rs_cache.radii, perturbed_network.rs_cache.chi_arr, perturbed_network.rs_cache.pA_arr, perturbed_network.rs_cache.time_arr, gamma)
-
-        self.results.save()
         return self.results 
     
