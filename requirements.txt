@@ -33,7 +33,6 @@ ninja
 numexpr
 numpy
 onnx
-onnxruntime
 opencv-python
 packaging
 pandas
