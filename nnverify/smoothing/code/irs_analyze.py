@@ -438,7 +438,7 @@ def compute_smoothed_accuracy(net, approximation, dataset, alpha1, batch, sigma,
 
 def plot_stored(net, approximation, dataset, count, alpha1, alpha_chi, batch, sigma, N):
     res_map = get_res_map(net, approximation, dataset, count, alpha1, alpha_chi, batch, sigma, N)
-    args = IncrementalRSArgs(net, dataset=dataset, count=count, alpha1=alpha1, alpha_chi= alpha_chi, batch=batch, sigma=sigma, N=N, N2=None, N_chi=None, approx=approximation)
+    args = IncrementalRSArgs(net=net, dataset=dataset, count=count, alpha1=alpha1, alpha_chi= alpha_chi, batch=batch, sigma=sigma, N=N, N2=None, N_chi=None, approx=approximation)
     
     plot_mean_radius(args, res_map)
     plot_cert_accuracy(args, res_map)
@@ -452,7 +452,7 @@ def get_res_map(net, approximation, dataset, count, alpha1, alpha_chi, batch, si
     samples = [(int)(0.01 * i * N) for i in range(1, 11)]
     res_map = {}
     for sample in samples:
-        args = IncrementalRSArgs(net, dataset=dataset, count=count, alpha1=alpha1, alpha_chi= alpha_chi, batch=batch, sigma=sigma, N=N, N2=sample, N_chi=sample, approx=approximation)
+        args = IncrementalRSArgs(net=net, dataset=dataset, count=count, alpha1=alpha1, alpha_chi= alpha_chi, batch=batch, sigma=sigma, N=N, N2=sample, N_chi=sample, approx=approximation)
         res = IncrementalRSResults(args)
         res.load()
         res_map[sample] = res

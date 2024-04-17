@@ -79,8 +79,12 @@ def get_time_dir(args):
     
 
 class IncrementalRSArgs():
-    def __init__(self, net, dataset, sigma, N, N2, N_chi, alpha1, alpha_chi, batch, approx, count=100):
-        self.net_location = NET_HOME + str.replace(net, 'sigma', '%.2f' % sigma)
+    def __init__(self, dataset, sigma, N, N2, N_chi, alpha1, alpha_chi, batch, approx, count=100, net=None, net_path=None):
+        if net_path is not None:
+            self.net_location = net_path
+        else:
+            self.net_location = NET_HOME + str.replace(net, 'sigma', '%.2f' % sigma)
+
         self.dataset = dataset
         self.sigma = sigma
         self.N = N

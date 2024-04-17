@@ -1,1 +1,12 @@
-
+numpy
+gurobipy
+onnx
+auto_LiRPA @ git+https://github.com/Verified-Intelligence/auto_LiRPA
+onnxruntime
+torchvision
+matplotlib
+pandas
+tabulate
+scipy==1.11.0
+statsmodels
+seaborn

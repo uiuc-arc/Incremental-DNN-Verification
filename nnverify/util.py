@@ -4,8 +4,6 @@ import resource
 
 import nnverify.common as common
 from time import gmtime, strftime
-import onnx
-import onnxruntime as rt
 import torch
 import torch.nn as nn
 import torchvision
@@ -19,6 +17,12 @@ from nnverify.networks import FullyConnected, Conv
 from nnverify.training.models.cifar_resnet import resnet as resnet_cifar
 from nnverify.smoothing.code.datasets import get_normalize_layer
 
+try:
+    import onnx
+    import onnxruntime as rt
+except ImportError:
+    print("Warning: onnx is not installed!")
+    
 rt.set_default_logger_severity(3)
 
 from torchvision.models.resnet import resnet50
